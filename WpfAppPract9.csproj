@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>pngegg.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="img\cbcb.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="pngegg.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSpire.Doc" Version="11.6.0" />
+    <PackageReference Include="ImapX" Version="2.0.0.18" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.10.0-ci295" />
+    <PackageReference Include="Microsoft.Graph" Version="5.12.0" />
+    <PackageReference Include="OpenPop.NET" Version="2.0.6.1120" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\cbcb.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

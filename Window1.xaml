@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfAppPract9.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppPract9" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Новое письмо" Height="350" Width="550" MinHeight="320" MinWidth="400">
+    <Window.Background>
+        <ImageBrush ImageSource="/img/cbcb.jpg" Stretch="None"/>
+    </Window.Background>
+    <Grid Margin="10"  Background="#99F0F8FF" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid  Margin="0 0 10 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="To" FontFamily="Bahnschrift SemiCondensed" FontSize="16"/>
+            <TextBox x:Name="To" Grid.Column="1" BorderBrush="#00ABADB3" Background="#CCFFFFFF" FontFamily="Bahnschrift SemiCondensed" FontSize="16"/>
+            <Label Content="Subject" Grid.Row="1" FontFamily="Bahnschrift SemiCondensed" FontSize="16"/>
+            <TextBox x:Name="Subject" Grid.Row="1" Grid.Column="1" BorderBrush="#00ABADB3" Background="#CCFFFFFF" FontFamily="Bahnschrift SemiCondensed" FontSize="16"/>
+        </Grid>
+
+
+        <ToolBar Grid.Row="1" Margin="10 0 0 0" BorderBrush="#00ABADB3" Background="#E5FFFFFF">
+            <Button Command="ApplicationCommands.Cut" Content=" cut"/>
+            <Button Command="ApplicationCommands.Copy" Content="copy"/>
+            <Button Command="ApplicationCommands.Paste" Content="paste"/>
+            <Separator Margin="10 5"/>
+            <Button Command="ApplicationCommands.Undo" Content="undo"/>
+            <Button Command="ApplicationCommands.Redo" Content="redo"/>
+            <Separator Margin="10 5"/>
+            <Button Command="EditingCommands.ToggleBold" Content="bold"/>
+            <Button Command="EditingCommands.ToggleItalic" Content="italic"/>
+            <Button Command="EditingCommands.ToggleUnderline" Content="underline"/>
+            <Separator Margin="10 5"/>
+            <Button Command="EditingCommands.AlignLeft" Content="left"/>
+            <Button Command="EditingCommands.AlignCenter" Content="center"/>
+            <Button Command="EditingCommands.AlignRight" Content="right"/>
+            <Button Command="EditingCommands.AlignJustify" Content="justify"/>
+        </ToolBar>
+        <RichTextBox x:Name="RTB" Grid.Row="2"  AcceptsReturn="True" Margin="10 4 10 10" BorderBrush="#00ABADB3" Background="#E5FFFFFF" FontFamily="Bahnschrift SemiCondensed" FontSize="16">
+        </RichTextBox>
+        <Button Content="Send" Name="SendBtn" FontSize="16" HorizontalAlignment="Right" Margin="70 5" FontFamily="Bahnschrift SemiCondensed" Width="80" VerticalContentAlignment="Center" BorderBrush="#00ABADB3" Grid.Row="3" Click="SendBtn_Click"/>
+        <Button Content="Exit" Name="CloseBtn" Grid.Column="1" Grid.Row="3" FontSize="16" HorizontalAlignment="Right" FontFamily="Bahnschrift SemiCondensed" Width="50" Margin="10 5" VerticalContentAlignment="Center" BorderBrush="#00ABADB3" Click="CloseBtn_Click"/>
+        <Button Content="Save" Name="SaveRft" FontSize="16" HorizontalAlignment="Right" Margin="0 5 250 5" FontFamily="Bahnschrift SemiCondensed" Width="80" VerticalContentAlignment="Center" BorderBrush="#00ABADB3" Grid.Row="3" Click="SaveRft_Click"/>
+        <Button Content="Load" Name="LoadRft" FontSize="16" HorizontalAlignment="Right" Margin="0 5 160 5" FontFamily="Bahnschrift SemiCondensed" Width="80" VerticalContentAlignment="Center" BorderBrush="#00ABADB3" Grid.Row="3" Click="LoadRft_Click"/>
+    </Grid>
+</Window>
